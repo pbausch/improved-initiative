@@ -8,12 +8,25 @@ var port = process.env.PORT || 80;
 var app = express();
 var encounters = [];
 
-app.use(express.static('./'));
+var newEncounterId = (): number => {
+	var newId = encounters.length;
+	encounters[newId] = {};
+	return newId;
+}
+
+app.use(express.static(__dirname + '/', {index: false}));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {
-    res.render('index.html');
+app.get('/', (req, res) => {
+	var encounterId = newEncounterId();
+    res.redirect('/e/' + encounterId);
 });
+
+app.get('/e/:id', (req, res) => {
+	res.sendFile('index.html', {
+		root: __dirname		
+	});
+})
 
 app.route('/encounters/:id')
 .get((req, res) => {
@@ -24,9 +37,9 @@ app.route('/encounters/:id')
 	res.status(200).end();
 })
 
-var server = app.listen(port, function() {
+var server = app.listen(port, () => {
 	var host = server.address().address;
   	var port = server.address().port;
 
-	console.log('Improved Initiative listening at http://%s:%s', host, port);
+	console.log('Improved Initiative snarfing at http://%s:%s', host, port);
 })
