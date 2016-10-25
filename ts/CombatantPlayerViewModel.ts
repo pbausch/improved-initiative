@@ -35,13 +35,13 @@ module ImprovedInitiative {
             }
 
             if (creature.CurrentHP() <= 0) {
-                return "<span class='defeatedHP'>Defeated</span>";
+                return "<span class='defeatedHP'>defeated</span>";
             } else if (creature.CurrentHP() < creature.MaxHP / 2) {
-                return "<span class='bloodiedHP'>Bloodied</span>";
+                return "<span class='bloodiedHP'>bloodied</span>";
             } else if (creature.CurrentHP() < creature.MaxHP) {
-                return "<span class='hurtHP'>Hurt</span>";
+                return "<span class='hurtHP'>hurt</span>";
             }
-            return "<span class='healthyHP'>Healthy</span>";
+            return "<span class='healthyHP'>ok</span>";
         }
 
         private GetHPColor = (creature: ICreature) => {

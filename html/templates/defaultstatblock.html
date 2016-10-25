@@ -3,7 +3,7 @@
 <div class="Source" data-bind="text: Source"></div>
 <div class="Type" data-bind="text: Type"></div>
 
-<hr />
+<svg xmlns="http://www.w3.org/2000/svg" class="icon horizrule"><use xlink:href="#horizrule"></use></svg>
 
 <div class="AC">
     <span class="label">Armor Class</span>
@@ -22,6 +22,8 @@
     <span data-bind="statblockText: Speed.join(', ')"></span>
 </div>
 
+<svg xmlns="http://www.w3.org/2000/svg" class="icon horizrule"><use xlink:href="#horizrule"></use></svg>
+
 <div class="Abilities" data-bind="foreach: ['Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha']">
     <div>
         <div class="label" data-bind="text: $data"></div>
@@ -32,7 +34,7 @@
     </div>
 </div>
 
-<hr />
+<svg xmlns="http://www.w3.org/2000/svg" class="icon horizrule"><use xlink:href="#horizrule"></use></svg>
 
 <div class="modifiers" data-bind="foreach: ['Saves', 'Skills']">
     <div data-bind="visible: $parent[$data].length, css: $data">
@@ -56,8 +58,6 @@
     <span data-bind="text:Challenge"></span>
 </div>
 
-<hr />
-
 <!-- ko foreach: ['Traits','Actions','Reactions','LegendaryActions'] -->
 <div data-bind="if: $parent[$data].length, css: $data">
     <h4 data-bind="uiText: $data, visible: $parent[$data].length"></h4>
@@ -68,7 +68,6 @@
         <span data-bind="statblockText: Content"></span>
         </div>
     </div>
-  <hr />
 </div>
 <!-- /ko -->
 

@@ -9,7 +9,7 @@
 @primary-green: #00643c;
 @hover-green: lighten(@primary-green, 10);
 
-@primary-white: antiquewhite;
+@primary-white: #fcf1db;
 @zebra-white: darken(@primary-white, 3);
 @hover-white: darken(@primary-white, 10);
 @selected-white: darken(@primary-white, 20);
@@ -42,7 +42,7 @@
 //elements
 
 * {
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
     cursor: default;
     margin: 0;
 	padding: 0;
@@ -51,7 +51,7 @@
 html, body {
     height:100%;
     background-color: @primary-green;
-    color: @primary-white;
+    color: #333;
     display:flex;
     flex-direction:column;
 }
@@ -71,6 +71,13 @@ h1.improved-initiative {
 
 h2 {
     line-height: 1.4;
+    font-family: 'Bookmania';
+    font-weight: 400;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    color: maroon;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
 ul.bulleted {
@@ -238,7 +245,7 @@ input[type="file"] {
     
     .center-column {
         flex-grow:1;
-        background-image: url('../img/improved-initiative-transparent_darkgreen.png');
+        background-image: url('../img/background.png');
         background-position: center bottom;
         background-repeat: no-repeat;
     }
@@ -446,9 +453,55 @@ input[type="file"] {
 .statblock {
     // background-color: @primary-white;
     // color: @primary-black;
+    border-top: solid #e69c18 10px;
+    border-bottom: solid #e69c18 10px;
     display:block;
-    padding:@small-spacer;
+    padding:@medium-spacer;
     overflow-y:auto;
+    font-size: 14px;
+    line-height: 150%;
+    h3, h4 {
+        font-family: 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+        color: #7A200D;
+        font-weight: 700;
+        margin-top: 5px;
+        margin-bottom: -2px;
+        font-size: 25px;
+        letter-spacing: 1px;
+        font-variant: small-caps;
+        font-variant-ligatures: normal;
+        font-variant-caps: small-caps;
+        font-variant-numeric: normal;
+    }
+    h4 {
+        border-bottom: 1px solid #7A200D;
+        color: #7A200D;
+        font-size: 18px;
+        font-variant: small-caps;
+        font-weight: normal;
+        letter-spacing: 1px;
+        margin: 0;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .Source {
+        display: none;
+    }
+    .Type {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .horizrule {
+        fill: #922610;
+        /* Stroke is necessary for good antialiasing in Chrome. */
+        stroke: #922610;
+        margin-top: 0.7em;
+        margin-bottom: 0.35em;
+        height: 4px;
+        width: 100%;
+    }
     >div {
         flex-direction:row;
         flex-wrap: wrap;
@@ -458,6 +511,8 @@ input[type="file"] {
     }
     .label {
         font-weight:bold;
+        color: #7A200D;
+        margin-right: 2px;
     }
     .rollable {
         cursor: pointer;
@@ -478,6 +533,7 @@ input[type="file"] {
         flex-direction: column;
         div {
             flex-direction: row;
+            margin-bottom: 5px;
         }
     }
     .Traits, .Actions, .Reactions, .LegendaryActions {
@@ -486,6 +542,7 @@ input[type="file"] {
             flex-direction: column;
             div {
                 display:block;
+                margin-bottom: 10px;
             }
         }
     }
@@ -495,6 +552,7 @@ input[type="file"] {
             flex-direction: column;
             div {
                 display:block;
+                margin-bottom: 10px;
             }
         }
     }
@@ -508,6 +566,7 @@ input[type="file"] {
     span {
         padding-left:@small-spacer;
     }
+    color: @primary-white;
 }
 
 .creature {
@@ -523,7 +582,8 @@ input[type="file"] {
     }
     &.active {
         border-left-color: lighten(@primary-green, 15);
-        background-color: @active-green;
+        background-color: rgba(0,0,0,0.7);
+
         .name {
             font-weight:bold;
         }
@@ -539,11 +599,22 @@ input[type="file"] {
         background-color: @primary-black;
         color: @primary-white;
         padding: @medium-spacer;
+        .fa {
+            color: red;
+            opacity: 0.7;
+        }
     }
 
     .initiative {
         width: 30px;
         text-align: center;
+        svg {
+            width: 60px;
+            height: 60px;
+            fill: red;
+            opacity: 0.7;
+            margin: auto;
+        }
     }
 
     .name {
@@ -578,11 +649,27 @@ input[type="file"] {
 
     font-size: 4.5vw;
         
-    background-image: url('../img/improved-initiative-transparent_darkgreen.png');
+    background-image: url('../img/background.png');
     background-position: center bottom;
     background-repeat: no-repeat;
+
+    .name {
+        font-family: 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+        color: #7A200D;
+        font-weight: 400;
+        margin-top: 5px;
+        margin-bottom: -2px;
+        font-variant: small-caps;
+        font-variant-ligatures: normal;
+        font-variant-caps: small-caps;
+        font-variant-numeric: normal;
+    }
+
     .initiative {
         width: 5.5vw;
+        padding-right: 10px;
+        justify-content: center;
+        font-size: .5em;
     }
 
     .hp {
@@ -593,6 +680,9 @@ input[type="file"] {
     }
 
     .header .tags {
+        text-align: center;
+    }
+    .tags {
         text-align: center;
     }
 }

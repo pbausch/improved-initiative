@@ -22,13 +22,29 @@
 </head>
 
 <body id="playerview">
+	<comment>
+	<div class="svg-sprite" style="display:none;">
+		<svg version="1.1" id="d20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 612 637.5" enable-background="new 0 0 612 637.5" xml:space="preserve">
+		<path d="M102.307,410.598L306.003 78.262 509.712 410.598 z"></path>
+		<path d="M306.003,633.6L102.307 424.544 509.712 424.544 z"></path>
+		<path d="M291,78.262L95.87 399.884 42.273 138.296 z"></path>
+		<path d="M299.572,63.252L299.572 0 42.273 125.421 z"></path>
+		<path d="M286.71,631.458L91.58 430.981 40.125 494.233 z"></path>
+		<path d="M31.642,485.971L87.386 414.146 31.642 148.256 z"></path>
+		<path d="M321.02,78.262L516.124 399.884 569.745 138.296 z"></path>
+		<path d="M312.44,63.252L312.44 0 569.745 125.421 z"></path>
+		<path d="M325.296,631.458L520.426 430.981 571.881 494.233 z"></path>
+		<path d="M580.358,485.971L524.62 414.146 580.358 148.256 z"></path>
+		</svg>
+	</div>
+	</comment>
     <div class="encounter">
         <ul class="combatants">
             <li class="creature header">
-                <div class="initiative"><span class="fa fa-forward"></span></div>
-                <div class="name">Combatant</div>
-                <div class="hp"><span class="fa fa-heart"></span></div>
-                <div class="tags"><span class="fa fa-tag"></span></div>
+                <div class="initiative"><svg xmlns="http://www.w3.org/2000/svg" class="icon d20"><use xlink:href="#d20"></use></svg></div>
+                <div class="name"></div>
+                <div class="hp"><span class="fa fa-shield"></span></div>
+                <div class="tags"><span class="fa fa-eye"></span></div>
             </li>
             <!-- ko foreach: Creatures -->
             <li class="creature" data-bind="
