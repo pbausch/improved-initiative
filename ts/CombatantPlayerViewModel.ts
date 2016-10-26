@@ -24,9 +24,9 @@ module ImprovedInitiative {
 
             if (creature.IsPlayerCharacter || monsterHpVerbosity == "Actual HP") {
                 if (creature.TemporaryHP()) {
-                    return '{0}+{1}/{2}'.format(creature.CurrentHP(), creature.TemporaryHP(), creature.MaxHP);
+                    return '{0}+{1}'.format(creature.CurrentHP(), creature.TemporaryHP());
                 } else {
-                    return '{0}/{1}'.format(creature.CurrentHP(), creature.MaxHP);
+                    return '{0}'.format(creature.CurrentHP());
                 }
             }
 
