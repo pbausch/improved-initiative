@@ -2,6 +2,7 @@
 <html encounterId="{{encounterId}}" appInsightsKey="{{appInsightsKey}}">
 
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Lora|Noto+Sans|Oswald|UnifrakturCook:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{rootDirectory}}/css/improved-initiative.css">
 
     <title>Combat Tracker - Improved Initiative</title>
@@ -128,7 +129,8 @@
                         <!-- ko foreach: Creatures -->
                         <li class="creature" data-bind="
                             css: { selected: $root.Commander.SelectedCreatures().indexOf($data) > -1, 
-                                    active: $parent.ActiveCreature() == $data },
+                                    active: $parent.ActiveCreature() == $data,
+ 									playercharacter: $data.IsPlayerCharacter},
                             click: $root.Commander.SelectCreature,
                             component: {
                             name: 'combatant',

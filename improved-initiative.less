@@ -42,7 +42,7 @@
 //elements
 
 * {
-    /* font-family: 'Josefin Sans', sans-serif; */
+    // font-family: 'Josefin Sans', sans-serif;
     cursor: default;
     margin: 0;
 	padding: 0;
@@ -54,6 +54,7 @@ html, body {
     color: #333;
     display:flex;
     flex-direction:column;
+    font-family: 'Noto Sans';
 }
 
 div {
@@ -582,7 +583,7 @@ input[type="file"] {
     }
     &.active {
         border-left-color: lighten(@primary-green, 15);
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(255,255,255,1);
 
         .name {
             font-weight:bold;
@@ -656,7 +657,7 @@ input[type="file"] {
     .name {
         font-family: 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
         color: #7A200D;
-        font-weight: 400;
+        font-weight: 600;
         margin-top: 5px;
         margin-bottom: -2px;
         font-variant: small-caps;
@@ -684,6 +685,14 @@ input[type="file"] {
     }
     .tags {
         text-align: center;
+    }
+
+    .playercharacter {
+        .name {
+            font-family: 'UnifrakturCook', cursive;
+            font-variant: normal; 
+            color: #333;
+        }
     }
 }
 .footer {

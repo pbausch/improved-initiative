@@ -9,3 +9,10 @@ public/fonts/*
 .baseDir
 !Gruntfile.js
 !test/test.js
+public/sample_players.json
+
+public/sample_players.json.bak
+
+public/sample_players.json
+
+sample_players.json
